@@ -27,12 +27,20 @@ Backend partials are files with the extension **php** that reside in the [contro
 
 ### Hint Partials
 
-You can render informative panels in the backend, called hints, that the user can hide. The first parameter should be a unique key for the purposes of remembering if the hint has been hidden or not. The second parameter is a reference to a partial view. The third parameter can be some extra view variables to pass to the partial, in addition to some hint properties.
+You can render informative panels in the backend, called hints, that the user can hide. 
+
+The first parameter should be a unique key for the purposes of remembering if the hint has been hidden or not. The second parameter is a reference to a partial view. The third parameter can be some extra view variables to pass to the partial, in addition to some hint properties.
 
 ```php
 <?= $this->makeHintPartial('my_hint_key', 'my_hint_partial', ['foo' => 'bar']) ?>
 ```
 
+If you don't want to render a partial, you can supply content via the 'content' key of $params.
+
+```php
+<?= $this->makeHintPartial('my_hint_key', ['foo' => 'bar', 'content' => 'This is the hint content without partial']) ?>
+```
+     
 You can also disable the ability to hide a hint by setting the key value to a null value. This hint will always be displayed:
 
 ```php
@@ -47,6 +55,7 @@ Property | Description
 **title** | Adds a title section to the hint.
 **subtitle** | In addition to the title, adds a second line to the title section.
 **icon** | In addition to the title, adds an icon to the title section.
+**content** | If you don't want to render a partial, you can supply content via the 'content' key of $params.
 
 ### Checking if Hints are Hidden
 
