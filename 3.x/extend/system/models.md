@@ -72,6 +72,7 @@ Property | Description
 **$exists** | boolean that if true indicates that the model exists.
 **$dates** | values are converted to an instance of Carbon/DateTime objects after fetching.
 **$timestamps** | boolean that if true will automatically set created_at and updated_at fields.
+**dateFormat** | format of the timestamps
 **$jsonable** | values are encoded as JSON before saving and converted to arrays after fetching.
 **$fillable** | values are fields accessible to mass assignment.
 **$guarded** | values are fields guarded from mass assignment.
